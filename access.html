@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
 
 :root {
   --ink: #1a1a18;
@@ -98,7 +99,7 @@ nav {
 .nav-reserve:hover { background: var(--ink) !important; }
 
 /* ─── PAGE HERO ─── */
-.page-hero {
+.page-hero { /* fixed */
   padding-top: 80px;
   background: var(--ink);
   color: white;
@@ -342,9 +343,17 @@ tbody td:first-child {
 
 /* ─── SP ─── */
 @media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+  nav { padding: 14px 16px; }
+  .page-hero { padding: 90px 20px 40px; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links li:not(:last-child) { display: none; }
+  body { font-size: 14px; }
+  p, div, span, li { max-width: 100%; }
+  footer { margin-bottom: 64px; }
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
-  .page-hero { padding: 100px 24px 48px; }
+  .page-hero { /* fixed */ padding: 100px 24px 48px; }
   .cta-strip { padding: 56px 24px; }
   footer { padding: 36px 24px; flex-direction: column; gap: 14px; text-align: center; }
 }
@@ -354,6 +363,37 @@ tbody td:first-child {
 *, *::before, *::after {
   word-break: keep-all;
   overflow-wrap: break-word;
+}
+
+/* ─── SP BOTTOM BAR ─── */
+.sp-bar { display: none; }
+@media (max-width: 768px) {
+  .sp-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: white;
+    border-top: 1px solid var(--cream-2);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .sp-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    gap: 4px;
+  }
+  .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
+  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
+  .sp-bar-reserve { background: var(--sage); color: white; }
+  footer { margin-bottom: 64px; }
 }
 </style>
 <style>
@@ -606,10 +646,42 @@ tbody td:first-child {
 
 /* ─── SP ─── */
 @media (max-width: 768px) {
-  .access-main { padding: 48px 24px; grid-template-columns: 1fr; gap: 48px; }
-  .hours-full { padding: 56px 24px; }
+  .access-main { padding: 48px 20px; grid-template-columns: 1fr; gap: 40px; }
+  .hours-full { padding: 48px 20px; }
+  .hours-content { grid-template-columns: 1fr; gap: 20px; }
   .hours-content { grid-template-columns: 1fr; gap: 24px; }
-  .contact-section { padding: 56px 24px; grid-template-columns: 1fr; gap: 40px; }
+  .contact-section { padding: 48px 20px; grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ─── SP BOTTOM BAR ─── */
+.sp-bar { display: none; }
+@media (max-width: 768px) {
+  .sp-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: white;
+    border-top: 1px solid var(--cream-2);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .sp-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    gap: 4px;
+  }
+  .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
+  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
+  .sp-bar-reserve { background: var(--sage); color: white; }
+  footer { margin-bottom: 64px; }
 }
 </style>
 </head>
