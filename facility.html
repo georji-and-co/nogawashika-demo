@@ -416,7 +416,19 @@ tbody td:first-child {
   color: rgba(90,122,106,0.7);
   text-align: center;
 }
-.facility-photo svg { position: relative; z-index: 1; opacity: 0.35; }
+.facility-photo svg { position: relative; z-index: 1; opacity: 0.4; width: 40px !important; height: 40px !important; }
+.facility-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(90,122,106,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.3);
+}
 
 .facility-info {
   padding: 36px 32px;
@@ -600,9 +612,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">受付・待合室</span>
       </div>
       <div class="facility-info">
@@ -614,9 +626,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up" style="transition-delay:0.1s">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">診療室</span>
       </div>
       <div class="facility-info">
@@ -628,9 +640,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">完全個室（ファミリールーム）</span>
       </div>
       <div class="facility-info">
@@ -642,9 +654,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up" style="transition-delay:0.1s">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">デジタルレントゲン</span>
       </div>
       <div class="facility-info">
@@ -656,9 +668,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">滅菌器</span>
       </div>
       <div class="facility-info">
@@ -670,9 +682,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up" style="transition-delay:0.1s">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">口腔外バキューム</span>
       </div>
       <div class="facility-info">
@@ -684,9 +696,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up">
       <div class="facility-photo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5a7a6a" stroke-width="1">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label">レーザー治療器</span>
       </div>
       <div class="facility-info">
@@ -698,9 +710,9 @@ tbody td:first-child {
 
     <div class="facility-card fade-up" style="transition-delay:0.1s">
       <div class="facility-photo" style="background:linear-gradient(145deg, #f0e8d0 0%, #e4d4b0 100%);">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#b89a5a" stroke-width="1" style="opacity:0.5;position:relative;z-index:1;">
+        <div class="facility-icon-wrap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b89a5a" stroke-width="1" style="opacity:0.5;position:relative;z-index:1;">
           <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
-        </svg>
+        </svg></div>
         <span class="facility-photo-label" style="color:rgba(184,154,90,0.7);">ガチャガチャコーナー</span>
       </div>
       <div class="facility-info">
