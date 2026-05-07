@@ -365,16 +365,47 @@ tbody td:first-child {
   .page-hero { padding: 100px 20px 40px; }
   .page-title { font-size: 26px; }
 
-  /* 診療詳細 */
+  /* 診療詳細 — SP アコーディオン */
   .treatment-section { padding: 40px 20px; }
   .treatment-items { gap: 1px; }
-  .treatment-detail {
-    display: block;
-    padding: 24px 20px;
+  .treatment-detail { display: block; padding: 0; }
+  .td-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    gap: 12px;
+    -webkit-tap-highlight-color: transparent;
   }
-  .td-label { font-size: 11px; margin-bottom: 4px; }
-  .td-name { font-size: 16px; margin-bottom: 10px; }
-  .td-text { font-size: 13px; line-height: 1.9; }
+  .td-left { min-width: 0; flex: 1; }
+  .td-label { font-size: 11px; margin-bottom: 2px; }
+  .td-name { font-size: 15px; margin-bottom: 0; }
+  .td-arrow-icon {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    color: var(--sage);
+    transition: transform 0.3s ease;
+  }
+  .td-trigger[aria-expanded="true"] .td-arrow-icon { transform: rotate(180deg); }
+  .td-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease, padding 0.2s ease;
+    padding: 0 20px;
+  }
+  .td-body.open {
+    max-height: 600px;
+    padding: 0 20px 20px;
+  }
+  .td-text { font-size: 13px; line-height: 2; color: var(--ink-2); }
+  .treatment-detail:hover { background: none; }
+  .treatment-detail { border-bottom: 1px solid var(--cream-2); }
 
   /* 美容診療 */
   .aesthetic-section { padding: 40px 20px; }
@@ -595,13 +626,31 @@ tbody td:first-child {
 }
 .treatment-detail {
   background: var(--white);
-  padding: 40px 48px;
+  padding: 0;
+}
+.treatment-detail:hover { background: #fafaf8; }
+/* PC: triggerをdiv的に扱い、常に展開表示 */
+.td-trigger {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 16px 40px;
   align-items: start;
+  background: none;
+  border: none;
+  padding: 40px 48px;
+  cursor: default;
+  font-family: inherit;
+  text-align: left;
+  pointer-events: none;
 }
-.treatment-detail:hover { background: #fafaf8; }
+.td-arrow-icon { display: none; }
+.td-body {
+  padding: 0 48px 40px;
+  max-height: none !important;
+  overflow: visible !important;
+}
+.td-body.open { padding: 0 48px 40px; }
 .td-label {
   font-size: 17px;
   letter-spacing: 0.2em;
@@ -626,6 +675,8 @@ tbody td:first-child {
   letter-spacing: 0.04em;
   flex: 1;
   min-width: 200px;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 /* ─── AESTHETIC ─── */
@@ -832,18 +883,150 @@ tbody td:first-child {
     <h2 class="section-title">診療案内</h2>
   </div>
   <div class="treatment-items">
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">01</div><div class="td-name">むし歯</div></div><p class="td-text">初期のむし歯は経過観察で済むこともありますが、進行してしまうと治療が必要になります。治療期間や治療費を抑えるためにも、できるだけ早めに治療を始めましょう。歯は削る量や回数が多くなるほどもろくなるため、再発させないためにも、むし歯の原因を突き止めて改善するアプローチを行います。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">02</div><div class="td-name">歯周病</div></div><p class="td-text">歯周病は、歯ぐきや歯を支える骨が炎症を起こす病気で、進行すると顎の骨が溶かされて歯が抜け落ちます。治療には定期検診・クリーニング、毎日のていねいな歯磨きが欠かせません。誤嚥性肺炎や糖尿病などの要因にもなりますので、気になる症状がありましたらお早めにご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">03</div><div class="td-name">小児歯科</div></div><p class="td-text">子どもの歯は大人の歯よりも弱く、むし歯の進行も早いことが特徴です。乳歯のむし歯を放っておくと、永久歯もむし歯になる・まっすぐ生えてこないなど、将来的にも悪影響を及ぼします。当院ではお子さんのペースに合わせて治療を進めますので、安心しておまかせください。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">04</div><div class="td-name">歯科口腔外科</div></div><p class="td-text">歯科口腔外科とは、お口の中の外科治療を指します。「歯は痛くないけれど、口の中に違和感がある」「親知らずが気になる」「顎が開かない」という方はご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">05</div><div class="td-name">予防・クリーニング</div></div><p class="td-text">むし歯や歯周病は、病気になってから治療するのではなく、病気になる前に予防することが大切です。定期的な検診やプロの手によるクリーニング、フッ素塗布によって、お口の健康を守っていきましょう。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">06</div><div class="td-name">義歯（入れ歯）</div></div><p class="td-text">歯を失ったままにしていると、他の歯がカバーしようとして動いてしまうため、かみ合わせのバランスが悪くなります。患者さんのご希望をきちんとうかがい、お口にぴったり合う義歯を製作いたします。他院で製作した義歯の調整も承っています。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">07</div><div class="td-name">マウスピース製作</div></div><p class="td-text">スポーツ用から睡眠時無呼吸症候群の治療用まで、精密な歯型採取により、お一人お一人のお口にぴったり合うマウスピースをお作りします。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">08</div><div class="td-name">審美治療</div></div><p class="td-text">顔全体の印象は、口元で決まります。当院では見た目の美しさはもちろん、「噛む」「話す」といった機能面のバランスも重視し、できる限り自然で健康的な状態をめざしています。金属の詰め物や被せ物を白くしたい、歯の隙間が気になるなど、お気軽にご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">09</div><div class="td-name">ホワイトニング</div></div><p class="td-text">加齢・遺伝・食べ物・タバコなどにより黄ばんでしまった歯を、削ることなく白くする治療です。院内で行うオフィスホワイトニングと、ご自宅で行うホームホワイトニングからお選びいただけます。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">10</div><div class="td-name">矯正歯科</div></div><p class="td-text">歯列や顎を整えて「バランスのよいかみ合わせ」と「美しい歯並び」を作ります。整った歯並びはケアがしやすく、むし歯・歯周病の予防にもつながります。目立ちにくい装置もあります。お子さんから大人までご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">11</div><div class="td-name">根管治療</div></div><p class="td-text">歯の根っこの治療です。むし歯が重症化すると根っこにまで感染が広がります。感染した根っこを取り除き、殺菌・密閉することで、抜歯せずに歯を残せる場合もあります。</p></div>
-    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">12</div><div class="td-name">訪問歯科診療</div></div><p class="td-text">加齢や病気、障がいなどで通院が困難な患者さんに対する訪問歯科診療を行っています。専用のポータブル機器を持参し、ご自宅や施設へうかがって医院と同レベルの治療をご提供します。</p></div>
+    <div class="treatment-detail fade-up">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">01</div>
+          <div class="td-name">むし歯</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">初期のむし歯は経過観察で済むこともありますが、進行してしまうと治療が必要になります。治療期間や治療費を抑えるためにも、できるだけ早めに治療を始めましょう。歯は削る量や回数が多くなるほどもろくなるため、再発させないためにも、むし歯の原因を突き止めて改善するアプローチを行います。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.04s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">02</div>
+          <div class="td-name">歯周病</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">歯周病は、歯ぐきや歯を支える骨が炎症を起こす病気で、進行すると顎の骨が溶かされて歯が抜け落ちます。治療には定期検診・クリーニング、毎日のていねいな歯磨きが欠かせません。誤嚥性肺炎や糖尿病などの要因にもなりますので、気になる症状がありましたらお早めにご相談ください。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.08s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">03</div>
+          <div class="td-name">小児歯科</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">子どもの歯は大人の歯よりも弱く、むし歯の進行も早いことが特徴です。乳歯のむし歯を放っておくと、永久歯もむし歯になる・まっすぐ生えてこないなど、将来的にも悪影響を及ぼします。当院ではお子さんのペースに合わせて治療を進めますので、安心しておまかせください。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.12s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">04</div>
+          <div class="td-name">歯科口腔外科</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">歯科口腔外科とは、お口の中の外科治療を指します。「歯は痛くないけれど、口の中に違和感がある」「親知らずが気になる」「顎が開かない」という方はご相談ください。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.16s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">05</div>
+          <div class="td-name">予防・クリーニング</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">むし歯や歯周病は、病気になってから治療するのではなく、病気になる前に予防することが大切です。定期的な検診やプロの手によるクリーニング、フッ素塗布によって、お口の健康を守っていきましょう。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.20s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">06</div>
+          <div class="td-name">義歯（入れ歯）</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">歯を失ったままにしていると、他の歯がカバーしようとして動いてしまうため、かみ合わせのバランスが悪くなります。患者さんのご希望をきちんとうかがい、お口にぴったり合う義歯を製作いたします。他院で製作した義歯の調整も承っています。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.24s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">07</div>
+          <div class="td-name">マウスピース製作</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">スポーツ用から睡眠時無呼吸症候群の治療用まで、精密な歯型採取により、お一人お一人のお口にぴったり合うマウスピースをお作りします。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.28s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">08</div>
+          <div class="td-name">審美治療</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">顔全体の印象は、口元で決まります。当院では見た目の美しさはもちろん、「噛む」「話す」といった機能面のバランスも重視し、できる限り自然で健康的な状態をめざしています。金属の詰め物や被せ物を白くしたい、歯の隙間が気になるなど、お気軽にご相談ください。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.32s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">09</div>
+          <div class="td-name">ホワイトニング</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">加齢・遺伝・食べ物・タバコなどにより黄ばんでしまった歯を、削ることなく白くする治療です。院内で行うオフィスホワイトニングと、ご自宅で行うホームホワイトニングからお選びいただけます。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.36s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">10</div>
+          <div class="td-name">矯正歯科</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">歯列や顎を整えて「バランスのよいかみ合わせ」と「美しい歯並び」を作ります。整った歯並びはケアがしやすく、むし歯・歯周病の予防にもつながります。目立ちにくい装置もあります。お子さんから大人までご相談ください。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.40s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">11</div>
+          <div class="td-name">根管治療</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">歯の根っこの治療です。むし歯が重症化すると根っこにまで感染が広がります。感染した根っこを取り除き、殺菌・密閉することで、抜歯せずに歯を残せる場合もあります。</p>
+      </div>
+    </div>
+    <div class="treatment-detail fade-up" style="transition-delay:0.44s">
+      <button class="td-trigger" aria-expanded="false">
+        <div class="td-left">
+          <div class="td-label">12</div>
+          <div class="td-name">訪問歯科診療</div>
+        </div>
+        <svg class="td-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="td-body">
+        <p class="td-text">加齢や病気、障がいなどで通院が困難な患者さんに対する訪問歯科診療を行っています。専用のポータブル機器を持参し、ご自宅や施設へうかがって医院と同レベルの治療をご提供します。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -909,6 +1092,66 @@ tbody td:first-child {
 <script>
 const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<script>
+// ─── アコーディオン (SP のみ動作) ───
+(function() {
+  function isSP() { return window.innerWidth <= 768; }
+
+  function initAccordion() {
+    document.querySelectorAll('.td-trigger').forEach(function(btn) {
+      // 既存のリスナーを避けるためcloneは使わず、フラグで管理
+      if (btn.dataset.acInit) return;
+      btn.dataset.acInit = '1';
+
+      btn.addEventListener('click', function() {
+        if (!isSP()) return;
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        var body = this.nextElementSibling;
+
+        // 同一グループで開いているものを閉じる（オプション：全閉じ）
+        // ここでは独立開閉（複数同時に開ける）
+        this.setAttribute('aria-expanded', !expanded);
+        body.classList.toggle('open', !expanded);
+      });
+    });
+  }
+
+  function applyMode() {
+    if (isSP()) {
+      // SP: bodyをすべて閉じ状態に（まだ開いていない場合）
+      document.querySelectorAll('.td-body').forEach(function(body) {
+        var trigger = body.previousElementSibling;
+        if (!trigger) return;
+        // 一度も触っていないものは閉じる
+        if (trigger.getAttribute('aria-expanded') === 'false') {
+          body.classList.remove('open');
+        }
+      });
+    } else {
+      // PC: 全部表示（openクラス不要だがCSSで制御済み）
+      document.querySelectorAll('.td-body').forEach(function(body) {
+        body.classList.remove('open');
+      });
+      document.querySelectorAll('.td-trigger').forEach(function(btn) {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    initAccordion();
+    applyMode();
+  });
+
+  // リサイズ時にモード切替
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyMode, 200);
+  });
+})();
 </script>
 </body>
 </html>
