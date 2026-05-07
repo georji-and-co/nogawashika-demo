@@ -380,8 +380,7 @@ tbody td:first-child {
   overflow-wrap: break-word;
 }
 
-/* ─── SP BOTTOM BAR ─── */
-.sp-bar { display: none; }
+
 @media (max-width: 768px) {
   .sp-bar {
     display: flex;
@@ -410,6 +409,67 @@ tbody td:first-child {
   .sp-bar-reserve { background: var(--sage); color: white; }
   footer { margin-bottom: 64px; }
 }
+
+
+@media (max-width: 768px) {
+  .sp-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: white;
+    border-top: 1px solid var(--cream-2);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .sp-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    gap: 3px;
+    color: inherit;
+  }
+  .sp-bar-tel { color: var(--ink) !important; border-right: 1px solid var(--cream-2); }
+  .sp-bar-tel span { font-size: 14px; font-weight: 500; }
+  .sp-bar-reserve { background: var(--sage) !important; color: white !important; }
+  footer { margin-bottom: 72px; }
+}
+
+/* ─── SP BOTTOM BAR FINAL ─── */
+.sp-bar { display: none; }
+@media (max-width: 768px) {
+  .sp-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 999;
+    background: white;
+    border-top: 1px solid #eeeae0;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .sp-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 11px;
+    gap: 3px;
+  }
+  .sp-bar-tel { color: #1a1a18; border-right: 1px solid #eeeae0; }
+  .sp-bar-tel strong { font-size: 13px; font-weight: 500; display: block; }
+  .sp-bar-reserve { background: #5a7a6a; color: white; }
+  footer { margin-bottom: 72px; }
+}
+
 </style>
 <style>
 /* ─── ACCESS MAIN ─── */
@@ -668,8 +728,7 @@ tbody td:first-child {
   .contact-section { padding: 48px 20px; grid-template-columns: 1fr; gap: 32px; }
 }
 
-/* ─── SP BOTTOM BAR ─── */
-.sp-bar { display: none; }
+
 @media (max-width: 768px) {
   .sp-bar {
     display: flex;
@@ -701,6 +760,20 @@ tbody td:first-child {
 </style>
 </head>
 <body>
+<div class="sp-bar">
+  <a href="tel:049-292-9201" class="sp-bar-tel">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    <strong>049-292-9201</strong>
+    電話で予約
+  </a>
+  <a href="https://www.v-apo.net/nogawashika/login" class="sp-bar-reserve">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    WEB予約
+    24時間受付
+  </a>
+</div>
+
+
 
 <div class="demo-banner">✦ デモサイト / Georji & Co. 制作</div>
 
