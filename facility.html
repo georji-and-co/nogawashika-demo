@@ -379,30 +379,31 @@ tbody td:first-child {
 }
 .facility-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
   background: var(--cream-2);
 }
 .facility-card {
   background: var(--white);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: background 0.2s;
 }
 .facility-card:hover { background: #fafaf8; }
-.facility-card.reverse { direction: rtl; }
-.facility-card.reverse > * { direction: ltr; }
+.facility-card.reverse { direction: ltr; }
 .facility-photo {
   aspect-ratio: 4/3;
+  width: 100%;
   background: var(--sage-light);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .facility-photo::before {
   content: '';
@@ -431,10 +432,10 @@ tbody td:first-child {
 }
 
 .facility-info {
-  padding: 36px 32px;
+  padding: 28px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .facility-num {
   font-family: 'DM Serif Display', serif;
@@ -567,9 +568,7 @@ tbody td:first-child {
 @media (max-width: 768px) {
   .facility-intro { padding: 48px 24px 32px; }
   .facility-main { padding: 0 24px 64px; }
-  .facility-grid { grid-template-columns: 1fr; }
-  .facility-card { grid-template-columns: 1fr; }
-  .facility-card.reverse { direction: ltr; }
+  .facility-grid { grid-template-columns: 1fr 1fr; }
   .facility-highlights { padding: 48px 24px; grid-template-columns: 1fr; }
   .kids-section { padding: 56px 24px; grid-template-columns: 1fr; gap: 40px; }
 }
