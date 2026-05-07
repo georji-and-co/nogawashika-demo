@@ -581,6 +581,9 @@ tbody td:first-child {
   background: white;
   padding: 44px 36px;
   transition: background 0.25s;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
 }
 .feature-card:hover { background: var(--sage-light); }
 .feature-num {
@@ -602,12 +605,16 @@ tbody td:first-child {
   color: var(--ink);
   margin-bottom: 12px;
   letter-spacing: 0.04em;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 .feature-text {
   font-size: 17px;
   font-weight: 300;
   color: var(--ink-3);
   line-height: 2;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 /* ─── TREATMENT OVERVIEW ─── */
@@ -776,6 +783,9 @@ tbody td:first-child {
 
 /* ─── SP ─── */
 @media (max-width: 768px) {
+  /* SP全体のfont-sizeリセット */
+  body { font-size: 14px; }
+  p, li, span, div { max-width: 100%; }
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
 
@@ -790,9 +800,9 @@ tbody td:first-child {
   .stat-item { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); text-align: left; }
   .stat-item:last-child { border-bottom: none; }
 
-  .features { padding: 48px 20px; }
+  .features { padding: 48px 20px; box-sizing: border-box; width: 100%; }
   .features-intro { max-width: 100%; margin-bottom: 28px; }
-  .features-grid { grid-template-columns: 1fr; gap: 2px; }
+  .features-grid { grid-template-columns: 1fr; gap: 2px; width: 100%; }
   .feature-card { padding: 28px 20px; }
   .feature-title { font-size: 15px; }
   .feature-text { font-size: 14px; }
