@@ -38,7 +38,7 @@ body {
 /* ─── NAV ─── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 33px; left: 0; right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ nav {
 
 /* ─── PAGE HERO ─── */
 .page-hero { /* fixed */
-  padding-top: 80px;
+  padding-top: 113px;
   background: var(--ink);
   color: white;
   padding-bottom: 64px;
@@ -288,16 +288,15 @@ footer {
 /* ─── DEMO BANNER ─── */
 .demo-banner {
   position: fixed;
-  bottom: 24px; right: 24px;
+  top: 0; left: 0; right: 0;
   background: var(--gold);
   color: white;
-  padding: 12px 20px;
-  border-radius: 2px;
-  font-size: 17px;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.1em;
-  z-index: 200;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 300;
 }
 
 /* ─── SCROLL ANIMATION ─── */
@@ -360,7 +359,7 @@ tbody td:first-child {
   .highlight-text { font-size: 13px; }
   html, body { overflow-x: hidden; }
   nav { padding: 14px 16px; }
-  .page-hero { padding: 90px 20px 40px; }
+  .page-hero { padding: 100px 20px 40px; }
   .nav-links { display: flex; gap: 0; }
   .nav-links li:not(:last-child) { display: none; }
   body { font-size: 14px; }
@@ -368,7 +367,7 @@ tbody td:first-child {
   footer { margin-bottom: 64px; }
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
-  .page-hero { /* fixed */ padding: 100px 24px 48px; }
+  .page-hero { /* fixed */ padding: 113px 24px 48px; }
   .cta-strip { padding: 56px 24px; }
   footer { padding: 36px 24px; flex-direction: column; gap: 14px; text-align: center; }
 }
@@ -382,91 +381,15 @@ tbody td:first-child {
 
 
 @media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 200;
-    background: white;
-    border-top: 1px solid var(--cream-2);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    gap: 4px;
-  }
-  .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
-  .sp-bar-reserve { background: var(--sage); color: white; }
   footer { margin-bottom: 64px; }
 }
 
 
 @media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 200;
-    background: white;
-    border-top: 1px solid var(--cream-2);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    gap: 3px;
-    color: inherit;
-  }
-  .sp-bar-tel { color: var(--ink) !important; border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 14px; font-weight: 500; }
-  .sp-bar-reserve { background: var(--sage) !important; color: white !important; }
   footer { margin-bottom: 72px; }
 }
 
-/* ─── SP BOTTOM BAR FINAL ─── */
-.sp-bar { display: none; }
 @media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 999;
-    background: white;
-    border-top: 1px solid #eeeae0;
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    gap: 3px;
-  }
-  .sp-bar-tel { color: #1a1a18; border-right: 1px solid #eeeae0; }
-  .sp-bar-tel strong { font-size: 13px; font-weight: 500; display: block; }
-  .sp-bar-reserve { background: #5a7a6a; color: white; }
   footer { margin-bottom: 72px; }
 }
 
@@ -693,6 +616,12 @@ tbody td:first-child {
 
 
 @media (max-width: 768px) {
+  footer { margin-bottom: 64px; }
+}
+
+/* ─── SP BOTTOM BAR ─── */
+.sp-bar { display: none; }
+@media (max-width: 768px) {
   .sp-bar {
     display: flex;
     position: fixed;
@@ -708,7 +637,7 @@ tbody td:first-child {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px 8px;
+    padding: 10px 8px;
     text-decoration: none;
     font-size: 11px;
     font-weight: 400;
@@ -716,9 +645,9 @@ tbody td:first-child {
     gap: 4px;
   }
   .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
+  .sp-bar-tel strong { font-size: 13px; font-weight: 500; display: block; }
   .sp-bar-reserve { background: var(--sage); color: white; }
-  footer { margin-bottom: 64px; }
+  footer { margin-bottom: 72px; }
 }
 </style>
 </head>

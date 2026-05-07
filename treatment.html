@@ -38,7 +38,7 @@ body {
 /* ─── NAV ─── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 33px; left: 0; right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ nav {
 
 /* ─── PAGE HERO ─── */
 .page-hero { /* fixed */
-  padding-top: 80px;
+  padding-top: 113px;
   background: var(--ink);
   color: white;
   padding-bottom: 64px;
@@ -288,16 +288,15 @@ footer {
 /* ─── DEMO BANNER ─── */
 .demo-banner {
   position: fixed;
-  bottom: 24px; right: 24px;
+  top: 0; left: 0; right: 0;
   background: var(--gold);
   color: white;
-  padding: 12px 20px;
-  border-radius: 2px;
-  font-size: 17px;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.1em;
-  z-index: 200;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 300;
 }
 
 /* ─── SCROLL ANIMATION ─── */
@@ -357,18 +356,13 @@ tbody td:first-child {
 
 
 
-/* ─── SP BOTTOM BAR FINAL ─── */
-.sp-bar { display: none; }
-
-
-
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
   body { font-size: 14px; }
   nav { padding: 14px 16px; }
   .nav-links { display: flex; gap: 0; }
   .nav-links li:not(:last-child) { display: none; }
-  .page-hero { padding: 90px 20px 40px; }
+  .page-hero { padding: 100px 20px 40px; }
   .page-title { font-size: 26px; }
 
   /* 診療詳細 */
@@ -725,13 +719,17 @@ tbody td:first-child {
   
   
   .aesthetic-section { padding: 48px 20px; }
-  .aesthetic-intro-block { grid-template-columns: 1fr; gap: 24px; }
-  .aesthetic-grid { grid-template-columns: 1fr; }
-  .aesthetic-intro-block { grid-template-columns: 1fr; gap: 32px; }
+    .aesthetic-intro-block { grid-template-columns: 1fr; gap: 32px; }
   .aesthetic-grid { grid-template-columns: 1fr; }
 }
 
 
+@media (max-width: 768px) {
+  footer { margin-bottom: 64px; }
+}
+
+/* ─── SP BOTTOM BAR ─── */
+.sp-bar { display: none; }
 @media (max-width: 768px) {
   .sp-bar {
     display: flex;
@@ -748,7 +746,7 @@ tbody td:first-child {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px 8px;
+    padding: 10px 8px;
     text-decoration: none;
     font-size: 11px;
     font-weight: 400;
@@ -756,9 +754,9 @@ tbody td:first-child {
     gap: 4px;
   }
   .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
+  .sp-bar-tel strong { font-size: 13px; font-weight: 500; display: block; }
   .sp-bar-reserve { background: var(--sage); color: white; }
-  footer { margin-bottom: 64px; }
+  footer { margin-bottom: 72px; }
 }
 </style>
 </head>
