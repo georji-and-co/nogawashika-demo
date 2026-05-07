@@ -585,9 +585,9 @@ tbody td:first-child {
 .treatment-detail {
   background: var(--white);
   padding: 40px 48px;
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
   align-items: start;
 }
 .treatment-detail:hover { background: #fafaf8; }
@@ -606,12 +606,15 @@ tbody td:first-child {
   letter-spacing: 0.05em;
   line-height: 1.5;
 }
+.td-left { min-width: 140px; flex-shrink: 0; }
 .td-text {
   font-size: 17px;
   font-weight: 300;
   color: var(--ink-2);
   line-height: 2.2;
   letter-spacing: 0.04em;
+  flex: 1;
+  min-width: 200px;
 }
 
 /* ─── AESTHETIC ─── */

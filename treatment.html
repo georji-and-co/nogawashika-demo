@@ -585,9 +585,9 @@ tbody td:first-child {
 .treatment-detail {
   background: var(--white);
   padding: 40px 48px;
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
   align-items: start;
 }
 .treatment-detail:hover { background: #fafaf8; }
@@ -606,12 +606,15 @@ tbody td:first-child {
   letter-spacing: 0.05em;
   line-height: 1.5;
 }
+.td-left { min-width: 140px; flex-shrink: 0; }
 .td-text {
   font-size: 17px;
   font-weight: 300;
   color: var(--ink-2);
   line-height: 2.2;
   letter-spacing: 0.04em;
+  flex: 1;
+  min-width: 200px;
 }
 
 /* ─── AESTHETIC ─── */
@@ -804,18 +807,18 @@ tbody td:first-child {
     <h2 class="section-title">診療案内</h2>
   </div>
   <div class="treatment-items">
-    <div class="treatment-detail fade-up"><div><div class="td-label">01</div><div class="td-name">むし歯</div></div><p class="td-text">初期のむし歯は経過観察で済むこともありますが、進行してしまうと治療が必要になります。治療期間や治療費を抑えるためにも、できるだけ早めに治療を始めましょう。歯は削る量や回数が多くなるほどもろくなるため、再発させないためにも、むし歯の原因を突き止めて改善するアプローチを行います。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">02</div><div class="td-name">歯周病</div></div><p class="td-text">歯周病は、歯ぐきや歯を支える骨が炎症を起こす病気で、進行すると顎の骨が溶かされて歯が抜け落ちます。治療には定期検診・クリーニング、毎日のていねいな歯磨きが欠かせません。誤嚥性肺炎や糖尿病などの要因にもなりますので、気になる症状がありましたらお早めにご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">03</div><div class="td-name">小児歯科</div></div><p class="td-text">子どもの歯は大人の歯よりも弱く、むし歯の進行も早いことが特徴です。乳歯のむし歯を放っておくと、永久歯もむし歯になる・まっすぐ生えてこないなど、将来的にも悪影響を及ぼします。当院ではお子さんのペースに合わせて治療を進めますので、安心しておまかせください。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">04</div><div class="td-name">歯科口腔外科</div></div><p class="td-text">歯科口腔外科とは、お口の中の外科治療を指します。「歯は痛くないけれど、口の中に違和感がある」「親知らずが気になる」「顎が開かない」という方はご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">05</div><div class="td-name">予防・クリーニング</div></div><p class="td-text">むし歯や歯周病は、病気になってから治療するのではなく、病気になる前に予防することが大切です。定期的な検診やプロの手によるクリーニング、フッ素塗布によって、お口の健康を守っていきましょう。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">06</div><div class="td-name">義歯（入れ歯）</div></div><p class="td-text">歯を失ったままにしていると、他の歯がカバーしようとして動いてしまうため、かみ合わせのバランスが悪くなります。患者さんのご希望をきちんとうかがい、お口にぴったり合う義歯を製作いたします。他院で製作した義歯の調整も承っています。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">07</div><div class="td-name">マウスピース製作</div></div><p class="td-text">スポーツ用から睡眠時無呼吸症候群の治療用まで、精密な歯型採取により、お一人お一人のお口にぴったり合うマウスピースをお作りします。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">08</div><div class="td-name">審美治療</div></div><p class="td-text">顔全体の印象は、口元で決まります。当院では見た目の美しさはもちろん、「噛む」「話す」といった機能面のバランスも重視し、できる限り自然で健康的な状態をめざしています。金属の詰め物や被せ物を白くしたい、歯の隙間が気になるなど、お気軽にご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">09</div><div class="td-name">ホワイトニング</div></div><p class="td-text">加齢・遺伝・食べ物・タバコなどにより黄ばんでしまった歯を、削ることなく白くする治療です。院内で行うオフィスホワイトニングと、ご自宅で行うホームホワイトニングからお選びいただけます。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">10</div><div class="td-name">矯正歯科</div></div><p class="td-text">歯列や顎を整えて「バランスのよいかみ合わせ」と「美しい歯並び」を作ります。整った歯並びはケアがしやすく、むし歯・歯周病の予防にもつながります。目立ちにくい装置もあります。お子さんから大人までご相談ください。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">11</div><div class="td-name">根管治療</div></div><p class="td-text">歯の根っこの治療です。むし歯が重症化すると根っこにまで感染が広がります。感染した根っこを取り除き、殺菌・密閉することで、抜歯せずに歯を残せる場合もあります。</p></div>
-    <div class="treatment-detail fade-up"><div><div class="td-label">12</div><div class="td-name">訪問歯科診療</div></div><p class="td-text">加齢や病気、障がいなどで通院が困難な患者さんに対する訪問歯科診療を行っています。専用のポータブル機器を持参し、ご自宅や施設へうかがって医院と同レベルの治療をご提供します。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">01</div><div class="td-name">むし歯</div></div><p class="td-text">初期のむし歯は経過観察で済むこともありますが、進行してしまうと治療が必要になります。治療期間や治療費を抑えるためにも、できるだけ早めに治療を始めましょう。歯は削る量や回数が多くなるほどもろくなるため、再発させないためにも、むし歯の原因を突き止めて改善するアプローチを行います。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">02</div><div class="td-name">歯周病</div></div><p class="td-text">歯周病は、歯ぐきや歯を支える骨が炎症を起こす病気で、進行すると顎の骨が溶かされて歯が抜け落ちます。治療には定期検診・クリーニング、毎日のていねいな歯磨きが欠かせません。誤嚥性肺炎や糖尿病などの要因にもなりますので、気になる症状がありましたらお早めにご相談ください。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">03</div><div class="td-name">小児歯科</div></div><p class="td-text">子どもの歯は大人の歯よりも弱く、むし歯の進行も早いことが特徴です。乳歯のむし歯を放っておくと、永久歯もむし歯になる・まっすぐ生えてこないなど、将来的にも悪影響を及ぼします。当院ではお子さんのペースに合わせて治療を進めますので、安心しておまかせください。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">04</div><div class="td-name">歯科口腔外科</div></div><p class="td-text">歯科口腔外科とは、お口の中の外科治療を指します。「歯は痛くないけれど、口の中に違和感がある」「親知らずが気になる」「顎が開かない」という方はご相談ください。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">05</div><div class="td-name">予防・クリーニング</div></div><p class="td-text">むし歯や歯周病は、病気になってから治療するのではなく、病気になる前に予防することが大切です。定期的な検診やプロの手によるクリーニング、フッ素塗布によって、お口の健康を守っていきましょう。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">06</div><div class="td-name">義歯（入れ歯）</div></div><p class="td-text">歯を失ったままにしていると、他の歯がカバーしようとして動いてしまうため、かみ合わせのバランスが悪くなります。患者さんのご希望をきちんとうかがい、お口にぴったり合う義歯を製作いたします。他院で製作した義歯の調整も承っています。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">07</div><div class="td-name">マウスピース製作</div></div><p class="td-text">スポーツ用から睡眠時無呼吸症候群の治療用まで、精密な歯型採取により、お一人お一人のお口にぴったり合うマウスピースをお作りします。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">08</div><div class="td-name">審美治療</div></div><p class="td-text">顔全体の印象は、口元で決まります。当院では見た目の美しさはもちろん、「噛む」「話す」といった機能面のバランスも重視し、できる限り自然で健康的な状態をめざしています。金属の詰め物や被せ物を白くしたい、歯の隙間が気になるなど、お気軽にご相談ください。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">09</div><div class="td-name">ホワイトニング</div></div><p class="td-text">加齢・遺伝・食べ物・タバコなどにより黄ばんでしまった歯を、削ることなく白くする治療です。院内で行うオフィスホワイトニングと、ご自宅で行うホームホワイトニングからお選びいただけます。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">10</div><div class="td-name">矯正歯科</div></div><p class="td-text">歯列や顎を整えて「バランスのよいかみ合わせ」と「美しい歯並び」を作ります。整った歯並びはケアがしやすく、むし歯・歯周病の予防にもつながります。目立ちにくい装置もあります。お子さんから大人までご相談ください。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">11</div><div class="td-name">根管治療</div></div><p class="td-text">歯の根っこの治療です。むし歯が重症化すると根っこにまで感染が広がります。感染した根っこを取り除き、殺菌・密閉することで、抜歯せずに歯を残せる場合もあります。</p></div>
+    <div class="treatment-detail fade-up"><div class="td-left"><div class="td-label">12</div><div class="td-name">訪問歯科診療</div></div><p class="td-text">加齢や病気、障がいなどで通院が困難な患者さんに対する訪問歯科診療を行っています。専用のポータブル機器を持参し、ご自宅や施設へうかがって医院と同レベルの治療をご提供します。</p></div>
   </div>
 </section>
 
