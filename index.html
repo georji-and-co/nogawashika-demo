@@ -524,6 +524,10 @@ tbody td:first-child {
 }
 
 /* ─── STATS ─── */
+@media (min-width: 769px) {
+  .stat-num-wrap { display: contents; }
+  .stat-text-wrap { display: contents; }
+}
 .stats {
   background: var(--ink);
   padding: 0 80px;
@@ -531,8 +535,6 @@ tbody td:first-child {
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(255,255,255,0.06);
 }
-.stat-num-wrap { display: contents; }
-.stat-text-wrap { display: contents; }
 .stat-item {
   padding: 48px 40px;
   border-right: 1px solid rgba(255,255,255,0.07);
