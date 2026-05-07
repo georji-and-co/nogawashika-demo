@@ -526,32 +526,63 @@ tbody td:first-child {
 /* ─── STATS ─── */
 .stats {
   background: var(--ink);
-  padding: 56px 80px;
+  padding: 0 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 .stat-item {
-  padding: 0 48px;
-  border-right: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
 }
-.stat-item:first-child { padding-left: 0; }
-.stat-item:last-child { border-right: none; padding-right: 0; }
+.stat-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.stat-item:hover::before { opacity: 1; }
+.stat-item:last-child { border-right: none; }
 .stat-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 44px;
+  font-size: clamp(36px, 4vw, 56px);
   color: var(--gold);
   line-height: 1;
-  margin-bottom: 10px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.stat-suffix {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.45em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(184,154,90,0.7);
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+.stat-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 .stat-label {
-  font-size: 17px;
+  font-size: 12px;
   font-weight: 300;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.38);
   letter-spacing: 0.08em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ─── FEATURES ─── */
@@ -796,9 +827,32 @@ tbody td:first-child {
   .hero-title { font-size: 26px; }
   .hero-subtitle { max-width: 100%; font-size: 14px; }
 
-  .stats { display: block; padding: 0; width: 100%; }
-  .stat-item { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); text-align: left; }
-  .stat-item:last-child { border-bottom: none; }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    border-top: none;
+  }
+  .stat-item {
+    padding: 28px 20px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:last-child {
+    grid-column: 1 / -1;
+    border-bottom: none;
+    border-right: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .stat-item:last-child .stat-num { margin-bottom: 0; font-size: 44px; }
+  .stat-item:last-child .stat-title { margin-bottom: 4px; }
+  .stat-num { font-size: 40px; margin-bottom: 10px; }
+  .stat-title { font-size: 13px; }
+  .stat-label { font-size: 11px; }
 
   .features { padding: 48px 20px; box-sizing: border-box; width: 100%; }
   .features-intro { max-width: 100%; margin-bottom: 28px; }
@@ -955,16 +1009,19 @@ tbody td:first-child {
 <!-- STATS -->
 <div class="stats">
   <div class="stat-item fade-up">
-    <div class="stat-num">2024</div>
-    <div class="stat-label">年2月に新規開院<br>新しく清潔な設備</div>
+    <div class="stat-num">2024<span class="stat-suffix">年</span></div>
+    <div class="stat-title">新規開院</div>
+    <div class="stat-label">清潔で新しい設備を<br>整えてお待ちしています</div>
   </div>
   <div class="stat-item fade-up" style="transition-delay:0.1s">
-    <div class="stat-num">12</div>
-    <div class="stat-label">の診療メニュー<br>幅広いお口の悩みに対応</div>
+    <div class="stat-num">12<span class="stat-suffix">科目</span></div>
+    <div class="stat-title">幅広い診療メニュー</div>
+    <div class="stat-label">むし歯から美容診療まで<br>お口の悩みに幅広く対応</div>
   </div>
   <div class="stat-item fade-up" style="transition-delay:0.2s">
-    <div class="stat-num">8台</div>
-    <div class="stat-label">の駐車場を完備<br>お車でのご来院も安心</div>
+    <div class="stat-num">8<span class="stat-suffix">台</span></div>
+    <div class="stat-title">無料駐車場を完備</div>
+    <div class="stat-label">お車でのご来院も<br>安心してお越しください</div>
   </div>
 </div>
 
