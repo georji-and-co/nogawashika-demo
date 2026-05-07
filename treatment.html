@@ -630,27 +630,28 @@ tbody td:first-child {
 }
 .treatment-detail:hover { background: #fafaf8; }
 /* PC: triggerをdiv的に扱い、常に展開表示 */
-.td-trigger {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 40px;
-  align-items: start;
-  background: none;
-  border: none;
-  padding: 40px 48px;
-  cursor: default;
-  font-family: inherit;
-  text-align: left;
-  pointer-events: none;
+@media (min-width: 769px) {
+  .td-trigger {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    align-items: start;
+    background: none;
+    border: none;
+    padding: 40px 48px;
+    cursor: default;
+    font-family: inherit;
+    text-align: left;
+    pointer-events: none;
+  }
+  .td-arrow-icon { display: none; }
+  .td-body {
+    padding: 0 48px 40px;
+    max-height: none;
+    overflow: visible;
+  }
 }
-.td-arrow-icon { display: none; }
-.td-body {
-  padding: 0 48px 40px;
-  max-height: none !important;
-  overflow: visible !important;
-}
-.td-body.open { padding: 0 48px 40px; }
 .td-label {
   font-size: 17px;
   letter-spacing: 0.2em;
