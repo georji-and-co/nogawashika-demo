@@ -342,73 +342,7 @@ tbody td:first-child {
 .no { color: var(--ink-3); font-size: 17px; }
 
 /* ─── SP ─── */
-@media (max-width: 768px) {
-  .treatment-detail {
-    display: block !important;
-    padding: 24px 20px !important;
-  }
-  .td-text {
-    font-size: 13px !important;
-    line-height: 1.9 !important;
-    margin-top: 8px;
-  }
-  .td-name { font-size: 15px !important; }
-  .aesthetic-intro-block {
-    display: block !important;
-  }
-  .aesthetic-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .aes-card {
-    padding: 28px 20px !important;
-  }
-  .aes-text {
-    font-size: 13px !important;
-    overflow-wrap: break-word !important;
-    word-break: keep-all !important;
-  }
-  .aesthetic-intro-text {
-    font-size: 13px !important;
-    overflow-wrap: break-word !important;
-  }
-  /* テキストはみ出し防止 */
-  .td-text { font-size: 13px; line-height: 1.9; padding-right: 0; }
-  .td-name { font-size: 15px; }
-  .td-label { font-size: 10px; }
-  .treatment-section { padding: 48px 20px; }
-  /* 美容診療 */
-  .aesthetic-section { padding: 40px 20px; }
-  .aesthetic-intro-block { grid-template-columns: 1fr; gap: 20px; }
-  .aesthetic-grid { grid-template-columns: 1fr; }
-  .aes-card { padding: 28px 20px; }
-  .aes-title { font-size: 16px; }
-  .aes-text { font-size: 13px; }
-  .aes-list li { font-size: 13px; }
-  .aes-list-title { font-size: 11px; }
-  .aes-tag { font-size: 10px; }
-  /* 院長・スタッフ */
-  .doctor-section { padding: 48px 20px; grid-template-columns: 1fr; gap: 28px; }
-  .doctor-name { font-size: 22px; }
-  .doctor-message { font-size: 13px; }
-  .career-list li { font-size: 12px; }
-  .staff-section { padding: 48px 20px; }
-  .staff-grid { grid-template-columns: 1fr; }
-  .staff-info { padding: 0 20px; }
-  .staff-desc { font-size: 12px; }
-  html, body { overflow-x: hidden; }
-  nav { padding: 14px 16px; }
-  .page-hero { padding: 90px 20px 40px; }
-  .nav-links { display: flex; gap: 0; }
-  .nav-links li:not(:last-child) { display: none; }
-  body { font-size: 14px; }
-  p, div, span, li { max-width: 100%; }
-  footer { margin-bottom: 64px; }
-  nav { padding: 16px 24px; }
-  .nav-links { display: none; }
-  .page-hero { /* fixed */ padding: 100px 24px 48px; }
-  .cta-strip { padding: 56px 24px; }
-  footer { padding: 36px 24px; flex-direction: column; gap: 14px; text-align: center; }
-}
+
 
 
 /* ─── GLOBAL TEXT WRAP ─── */
@@ -418,95 +352,64 @@ tbody td:first-child {
 }
 
 
-@media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 200;
-    background: white;
-    border-top: 1px solid var(--cream-2);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    gap: 4px;
-  }
-  .sp-bar-tel { color: var(--ink); border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 15px; font-weight: 500; letter-spacing: 0.04em; }
-  .sp-bar-reserve { background: var(--sage); color: white; }
-  footer { margin-bottom: 64px; }
-}
 
 
-@media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 200;
-    background: white;
-    border-top: 1px solid var(--cream-2);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    gap: 3px;
-    color: inherit;
-  }
-  .sp-bar-tel { color: var(--ink) !important; border-right: 1px solid var(--cream-2); }
-  .sp-bar-tel span { font-size: 14px; font-weight: 500; }
-  .sp-bar-reserve { background: var(--sage) !important; color: white !important; }
-  footer { margin-bottom: 72px; }
-}
+
+
 
 /* ─── SP BOTTOM BAR FINAL ─── */
 .sp-bar { display: none; }
-@media (max-width: 768px) {
-  .sp-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 999;
-    background: white;
-    border-top: 1px solid #eeeae0;
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  .sp-bar a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 8px;
-    text-decoration: none;
-    font-size: 11px;
-    gap: 3px;
-  }
-  .sp-bar-tel { color: #1a1a18; border-right: 1px solid #eeeae0; }
-  .sp-bar-tel strong { font-size: 13px; font-weight: 500; display: block; }
-  .sp-bar-reserve { background: #5a7a6a; color: white; }
-  footer { margin-bottom: 72px; }
-}
 
+
+
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+  body { font-size: 14px; }
+  nav { padding: 14px 16px; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links li:not(:last-child) { display: none; }
+  .page-hero { padding: 90px 20px 40px; }
+  .page-title { font-size: 26px; }
+
+  /* 診療詳細 */
+  .treatment-section { padding: 40px 20px; }
+  .treatment-items { gap: 1px; }
+  .treatment-detail {
+    display: block;
+    padding: 24px 20px;
+  }
+  .td-label { font-size: 11px; margin-bottom: 4px; }
+  .td-name { font-size: 16px; margin-bottom: 10px; }
+  .td-text { font-size: 13px; line-height: 1.9; }
+
+  /* 美容診療 */
+  .aesthetic-section { padding: 40px 20px; }
+  .aesthetic-intro-block { display: block; }
+  .aesthetic-intro-block > div:first-child { margin-bottom: 24px; }
+  .aesthetic-grid { grid-template-columns: 1fr; }
+  .aes-card { padding: 24px 20px; }
+  .aes-title { font-size: 16px; }
+  .aes-text { font-size: 13px; }
+  .aes-list li { font-size: 13px; }
+  .aesthetic-intro-text { font-size: 13px; }
+  .section-title-white { font-size: 22px; }
+
+  /* 院長・スタッフ */
+  .doctor-section { padding: 40px 20px; display: block; }
+  .doctor-photo { aspect-ratio: 3/2; margin-bottom: 28px; }
+  .doctor-name { font-size: 22px; }
+  .doctor-message { font-size: 13px; }
+  .career-list li { font-size: 12px; }
+  .staff-section { padding: 40px 20px; }
+  .staff-grid { grid-template-columns: 1fr; }
+
+  /* 共通 */
+  .section-title { font-size: 22px; }
+  .cta-strip { padding: 48px 20px; }
+  .cta-btns { flex-direction: column; align-items: stretch; }
+  .cta-btns a { justify-content: center; }
+  footer { padding: 28px 20px; flex-direction: column; gap: 12px; text-align: center; margin-bottom: 72px; }
+}
 </style>
 <style>
 /* ─── DOCTOR ─── */
@@ -681,10 +584,10 @@ tbody td:first-child {
 }
 .treatment-detail {
   background: var(--white);
-  padding: 48px 56px;
+  padding: 40px 48px;
   display: grid;
   grid-template-columns: 160px 1fr;
-  gap: 48px;
+  gap: 40px;
   align-items: start;
 }
 .treatment-detail:hover { background: #fafaf8; }
