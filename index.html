@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
 
 :root {
   --ink: #1a1a18;
@@ -342,13 +343,7 @@ tbody td:first-child {
 .no { color: var(--ink-3); font-size: 17px; }
 
 /* ─── SP ─── */
-@media (max-width: 768px) {
-  nav { padding: 16px 24px; }
-  .nav-links { display: none; }
-  .page-hero { padding: 100px 24px 48px; }
-  .cta-strip { padding: 56px 24px; }
-  footer { padding: 36px 24px; flex-direction: column; gap: 14px; text-align: center; }
-}
+
 
 
 /* ─── GLOBAL TEXT WRAP ─── */
@@ -784,61 +779,38 @@ tbody td:first-child {
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
 
-  .hero {
-    display: block;
-    min-height: auto;
-    padding-top: 72px;
-  }
+  .hero { display: block; min-height: auto; padding-top: 72px; }
   .hero-left { padding: 48px 20px 36px; }
   .hero-right { display: none; }
   .hero-tel { max-width: 100%; }
-  .hero-title { font-size: 28px; }
+  .hero-title { font-size: 26px; }
   .hero-subtitle { max-width: 100%; font-size: 14px; }
 
-  .stats {
-    display: block;
-    padding: 0;
-    width: 100%;
-  }
-  .stat-item {
-    padding: 24px 20px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    text-align: left;
-  }
+  .stats { display: block; padding: 0; width: 100%; }
+  .stat-item { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); text-align: left; }
   .stat-item:last-child { border-bottom: none; }
 
-  .features { padding: 56px 20px; }
-  .features-intro { max-width: 100%; margin-bottom: 32px; }
+  .features { padding: 48px 20px; }
+  .features-intro { max-width: 100%; margin-bottom: 28px; }
   .features-grid { grid-template-columns: 1fr; gap: 2px; }
 
-  .treatment-overview { padding: 56px 20px; }
+  .treatment-overview { padding: 48px 20px; }
   .treatment-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .treatment-card { padding: 20px 16px; }
+  .treatment-card { padding: 16px 14px; }
 
-  .aesthetic {
-    display: block;
-    padding: 56px 20px;
-  }
-  .aesthetic-left { margin-bottom: 32px; }
+  .aesthetic { display: block; padding: 48px 20px; }
+  .aesthetic-left { margin-bottom: 28px; }
   .aesthetic-cards { gap: 12px; }
 
-  .hours-section {
-    display: block;
-    padding: 56px 20px;
-  }
-  .access-mini { margin-top: 48px; }
+  .hours-section { display: block; padding: 48px 20px; }
+  .access-mini { margin-top: 40px; }
+  .hours-table-wrap { overflow-x: auto; }
 
-  .cta-strip { padding: 56px 20px; }
+  .cta-strip { padding: 48px 20px; }
   .cta-btns { flex-direction: column; align-items: stretch; }
   .cta-btns a { justify-content: center; }
 
-  footer {
-    padding: 32px 20px;
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
+  footer { padding: 28px 20px; flex-direction: column; gap: 12px; text-align: center; }
 }
 </style>
 </head>
