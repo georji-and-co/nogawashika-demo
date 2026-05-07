@@ -343,6 +343,35 @@ tbody td:first-child {
 
 /* ─── SP ─── */
 @media (max-width: 768px) {
+  /* テキストはみ出し防止 */
+  .td-text { font-size: 13px; line-height: 1.9; padding-right: 0; }
+  .td-name { font-size: 15px; }
+  .td-label { font-size: 10px; }
+  .treatment-detail {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 24px 20px;
+  }
+  .treatment-section { padding: 48px 20px; }
+  /* 美容診療 */
+  .aesthetic-section { padding: 40px 20px; }
+  .aesthetic-intro-block { grid-template-columns: 1fr; gap: 20px; }
+  .aesthetic-grid { grid-template-columns: 1fr; }
+  .aes-card { padding: 28px 20px; }
+  .aes-title { font-size: 16px; }
+  .aes-text { font-size: 13px; }
+  .aes-list li { font-size: 13px; }
+  .aes-list-title { font-size: 11px; }
+  .aes-tag { font-size: 10px; }
+  /* 院長・スタッフ */
+  .doctor-section { padding: 48px 20px; grid-template-columns: 1fr; gap: 28px; }
+  .doctor-name { font-size: 22px; }
+  .doctor-message { font-size: 13px; }
+  .career-list li { font-size: 12px; }
+  .staff-section { padding: 48px 20px; }
+  .staff-grid { grid-template-columns: 1fr; }
+  .staff-info { padding: 0 20px; }
+  .staff-desc { font-size: 12px; }
   html, body { overflow-x: hidden; }
   nav { padding: 14px 16px; }
   .page-hero { padding: 90px 20px 40px; }
@@ -705,8 +734,8 @@ tbody td:first-child {
   .staff-grid { grid-template-columns: 1fr; }
   .staff-grid { grid-template-columns: 1fr; }
   .treatment-section { padding: 48px 20px; }
-  .treatment-detail { grid-template-columns: 1fr; gap: 8px; padding: 24px 20px; }
-  .treatment-detail { grid-template-columns: 1fr; gap: 12px; padding: 32px 24px; }
+  
+  
   .aesthetic-section { padding: 48px 20px; }
   .aesthetic-intro-block { grid-template-columns: 1fr; gap: 24px; }
   .aesthetic-grid { grid-template-columns: 1fr; }
