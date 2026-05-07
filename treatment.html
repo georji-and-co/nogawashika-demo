@@ -380,12 +380,29 @@ tbody td:first-child {
   .aesthetic-section { padding: 40px 20px; }
   .aesthetic-intro-block { display: block; }
   .aesthetic-intro-block > div:first-child { margin-bottom: 24px; }
-  .aesthetic-grid { grid-template-columns: 1fr; }
-  .aes-card { padding: 24px 20px; }
-  .aes-title { font-size: 16px; }
-  .aes-text { font-size: 13px; }
-  .aes-list li { font-size: 13px; }
-  .aesthetic-intro-text { font-size: 13px; }
+  .aesthetic-grid { grid-template-columns: 1fr; width: 100%; }
+  .aes-card {
+    padding: 24px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .aes-tag {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .aes-title { font-size: 16px; word-break: break-all; overflow-wrap: break-word; }
+  .aes-text { font-size: 13px; line-height: 2; word-break: break-all; overflow-wrap: break-word; }
+  .aes-list-title { font-size: 11px; letter-spacing: 0.08em; }
+  .aes-list li { font-size: 13px; word-break: break-all; overflow-wrap: break-word; min-width: 0; }
+  .aes-list li::before { flex-shrink: 0; }
+  .aes-note { font-size: 12px; word-break: break-all; overflow-wrap: break-word; }
+  .aesthetic-intro-text { font-size: 13px; word-break: break-all; overflow-wrap: break-word; }
   .section-title-white { font-size: 22px; }
 
   /* 院長・スタッフ */
@@ -645,11 +662,16 @@ tbody td:first-child {
   grid-template-columns: 1fr 1fr;
   gap: 2px;
   background: rgba(255,255,255,0.06);
+  width: 100%;
+  overflow: hidden;
 }
 .aes-card {
   background: rgba(255,255,255,0.03);
   padding: 48px 44px;
   border: 1px solid rgba(255,255,255,0.07);
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .aes-tag {
   display: inline-block;
@@ -677,6 +699,8 @@ tbody td:first-child {
   color: rgba(255,255,255,0.55);
   line-height: 2.1;
   margin-bottom: 24px;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 .aes-list {
   list-style: none;
@@ -700,6 +724,9 @@ tbody td:first-child {
   border-bottom: 1px solid rgba(255,255,255,0.06);
   display: flex;
   gap: 10px;
+  min-width: 0;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 .aes-list li::before { content: '—'; color: rgba(255,255,255,0.2); }
 .aes-note {
