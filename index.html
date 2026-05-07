@@ -32,6 +32,7 @@ body {
   font-weight: 300;
   line-height: 1.8;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* ─── NAV ─── */
@@ -782,25 +783,62 @@ tbody td:first-child {
 @media (max-width: 768px) {
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 56px 24px 44px; }
-  .hero-right { height: 260px; }
-  .hero-badge { left: 14px; bottom: 20px; }
+
+  .hero {
+    display: block;
+    min-height: auto;
+    padding-top: 72px;
+  }
+  .hero-left { padding: 48px 20px 36px; }
+  .hero-right { display: none; }
   .hero-tel { max-width: 100%; }
-  .stats { padding: 36px 24px; grid-template-columns: 1fr; gap: 0; }
-  .stat-item { padding: 20px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .hero-title { font-size: 28px; }
+  .hero-subtitle { max-width: 100%; font-size: 14px; }
+
+  .stats {
+    display: block;
+    padding: 0;
+    width: 100%;
+  }
+  .stat-item {
+    padding: 24px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    text-align: left;
+  }
   .stat-item:last-child { border-bottom: none; }
-  .features { padding: 56px 24px; }
-  .features-intro { margin-bottom: 36px; }
-  .features-grid { grid-template-columns: 1fr; }
-  .treatment-overview { padding: 56px 24px; }
-  .treatment-grid { grid-template-columns: 1fr 1fr; }
-  .aesthetic { padding: 56px 24px; grid-template-columns: 1fr; gap: 36px; }
+
+  .features { padding: 56px 20px; }
+  .features-intro { max-width: 100%; margin-bottom: 32px; }
+  .features-grid { grid-template-columns: 1fr; gap: 2px; }
+
+  .treatment-overview { padding: 56px 20px; }
+  .treatment-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .treatment-card { padding: 20px 16px; }
+
+  .aesthetic {
+    display: block;
+    padding: 56px 20px;
+  }
+  .aesthetic-left { margin-bottom: 32px; }
   .aesthetic-cards { gap: 12px; }
-  .hours-section { padding: 56px 24px; grid-template-columns: 1fr; gap: 40px; }
-  .cta-strip { padding: 56px 24px; }
-  .cta-btns { flex-direction: column; align-items: center; }
-  footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+
+  .hours-section {
+    display: block;
+    padding: 56px 20px;
+  }
+  .access-mini { margin-top: 48px; }
+
+  .cta-strip { padding: 56px 20px; }
+  .cta-btns { flex-direction: column; align-items: stretch; }
+  .cta-btns a { justify-content: center; }
+
+  footer {
+    padding: 32px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 }
 </style>
 </head>
